@@ -23,8 +23,8 @@ A specialized shell script (`task.sh`) using  an **AWK** command was implemented
 *   **Column Selection:** To optimize processing, only 6 essential columns were retained: `TIME`, `TIMECORR`, `SAP_FLUX`, `SAP_FLUX_ERR`, `PDCSAP_FLUX`, and `PDCSAP_FLUX_ERR`.
 
 ### 3. Advanced Analysis and Plotting (Python)
-The final analysis stage utilizes Python ( especially the Matplotlib library) for scientific visualization:
+The final analysis stage utilizes Python (especially the Matplotlib library) for scientific visualization:
 *   **Outlier Detection:**  Data points are identified as outliers if they are more than 3 $\sigma$ away from the median value of the `PDCSAP_FLUX`. The calculation uses a Robust Sigma based on the Median Absolute Deviation (MAD) to ensure stability against extreme values.
-*   **Lomb-Scargle Periodograms:** The Lomb-Scargle method (with the AstroPy library implementatio) was used to identify the dominant frequency of the source's variability and estimates its period.
+*   **Lomb-Scargle Periodograms:** The Lomb-Scargle method (with the AstroPy library implementation) was used to identify the dominant frequency of the source's variability and estimates its period.
 *   **Phase Folding:** Using the calculated best period, the data is transformed from time-space to phase-space (range 0 to 1), significantly improving the readability of periodic signals.
 *   **Visualization:** Plots include `errorbar` measurements, median lines, 3 $\sigma$ thresholds, and separate markers (stars) for identified outliers, different linestyles, markers and colors were utilized to help differentiate the data and make the graph friendlier for anyone with sight difficulties.
