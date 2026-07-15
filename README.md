@@ -13,8 +13,8 @@ The processing workflow is divided into three main stages: acquisition, format t
 *   **Downloading:** 20 light curves in FITS format were downloaded using the `tesscurlsector73lc.sh` shell script.
 *   **Initial Conversion:** The FITS files were opened in TOPCAT and exported as CSV files for easier manipulation.
 *   **File Management:** To handle this large datasets, shell scripts were developed to:
-    *   Generate a master list of all CSV files.
-    *   **Split** the file list into smaller batches (5 files per batch) to facilitate its processing.
+    *   Generate a master list of all CSV files (`csv_names.sh`).
+    *   **Split** the file list into smaller batches (5 files per batch) to facilitate its processing (`five_names_csv.sh`).
 
 ### 2. Formatting and Filtering (Shell Processing)
 A specialized shell script (`task.sh`) using  an **AWK** command was implemented to transform the raw CSV data into a standardized format, with the following changes:
